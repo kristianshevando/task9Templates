@@ -1,4 +1,4 @@
-workflow Shutdown-ARM-VMs-Parallel
+workflow kristianRunbook
 {
 
 	$SubscriptionId         = "ae8ab787-c66f-4733-aed2-228ab3e8523b"
