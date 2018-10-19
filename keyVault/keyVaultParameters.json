@@ -1,0 +1,25 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "keyVaultName": {
+            "value": "kristianVault"
+        },
+        "tenantId": {
+            "value": "b41b72d0-4e9f-4c26-8a69-f949f367c91d"
+        },
+        "accessPolicies": {
+            "value": [
+                {
+                    "tenantId": "b41b72d0-4e9f-4c26-8a69-f949f367c91d",
+                    "objectId": "6869da43-aaa1-467b-a40c-ca3742578f9d",
+                    "permissions": {
+                        "keys": ["all"],
+                        "secrets": ["all"],
+                        "certificates":["all"]
+                    }
+                }
+            ]
+        }
+    }
+}
