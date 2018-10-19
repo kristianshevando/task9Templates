@@ -10,7 +10,6 @@
         },
         "credentialName": {
             "type": "string",
-            "defaultValue": "DefaultAzureCredential",
             "metadata": {
                 "description": "DefaultAzureCredential is the name of the Automation credential used in this runbook. This credential allows you to authenticate to Azure. "
             }
@@ -35,9 +34,9 @@
         }
     },
     "variables": {
-        "runbookName": "Get-AzureVMTutorial",
+        "runbookName": "kristianRunbook",
         "scriptUri": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-automation-runbook-getvms/Runbooks/Get-AzureVMTutorial.ps1",
-        "runbookDescription": "Authenticates to Azure and lists all the Azure V1 VMs",
+        "runbookDescription": "Stopping VMs",
         "sku": "Free"
     },
     "resources": [
