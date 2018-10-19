@@ -12,7 +12,34 @@
             "value": "kristianVM-nsg"
         },
         "networkSecurityGroupRules": {
-            "value": []
+            "value": [
+                {
+                    "name": "RDPIn",
+                    "properties": {
+                        "priority": 420,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "3389"
+                    }
+                },
+                {
+                    "name": "RDPOut",
+                    "properties": {
+                        "priority": 430,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Outbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "3389",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "*"
+                    }
+                }
+            ]
         },
         "virtualNetworkName": {
             "value": "KristianRG-vnet"
