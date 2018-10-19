@@ -6,10 +6,10 @@
             "value": "westeurope"
         },
         "networkInterfaceName": {
-            "value": "kristianvm508"
+            "value": "kristianvmNI"
         },
         "networkSecurityGroupName": {
-            "value": "kristianVM-nsg"
+            "value": "KristianVM-nsg"
         },
         "networkSecurityGroupRules": {
             "value": [
@@ -24,7 +24,7 @@
                         "sourcePortRange": "*",
                         "destinationAddressPrefix": "*",
                         "destinationPortRange": "3389"
-                    }
+                        }
                 },
                 {
                     "name": "RDPOut",
@@ -54,7 +54,7 @@
             "value": "10.0.0.0/24"
         },
         "publicIpAddressName": {
-            "value": "kristianVM-ip"
+            "value": "KristianVM-ip"
         },
         "publicIpAddressType": {
             "value": "Dynamic"
@@ -63,7 +63,7 @@
             "value": "Basic"
         },
         "virtualMachineName": {
-            "value": "kristianVM"
+            "value": "KristianVM"
         },
         "virtualMachineRG": {
             "value": "KristianRG"
@@ -81,15 +81,15 @@
             "reference": {
                 "keyVault":  {
                     "id":  "/subscriptions/ae8ab787-c66f-4733-aed2-228ab3e8523b/resourceGroups/KristianRG/providers/Microsoft.KeyVault/vaults/kristianVault"
-                    },
-                    "secretName": "kristianVMPassword"
-            }
+                },
+                "secretName": "kristianVMPassword"
+            }            
         },
         "diagnosticsStorageAccountName": {
-            "value": "kristiandiag"
+            "value": "ristiandiag"
         },
         "diagnosticsStorageAccountId": {
-            "value": "Microsoft.Storage/storageAccounts/kristiandiag"
+            "value": "Microsoft.Storage/storageAccounts/ristiandiag"
         },
         "diagnosticsStorageAccountType": {
             "value": "Standard_LRS"
