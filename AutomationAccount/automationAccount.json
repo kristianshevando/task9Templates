@@ -35,7 +35,7 @@
     },
     "variables": {
         "runbookName": "kristianRunbook",
-        "scriptUri": "https://raw.githubusercontent.com/kristianshevando/task9Templates/master/Workflow_Stop-AzureVM.ps1",
+        "scriptUri": "https://raw.githubusercontent.com/kristianshevando/task9Templates/master/kristianRunbook.ps1",
         "runbookDescription": "Stopping VMs",
         "sku": "Free"
     },
