@@ -1,0 +1,101 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "westeurope"
+        },
+        "networkInterfaceName": {
+            "value": "kristianvmNI2"
+        },
+        "networkSecurityGroupName": {
+            "value": "KristianVM2-nsg"
+        },
+        "networkSecurityGroupRules": {
+            "value": [
+                {
+                    "name": "RDPIn",
+                    "properties": {
+                        "priority": 420,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Inbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "*",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "3389"
+                        }
+                },
+                {
+                    "name": "RDPOut",
+                    "properties": {
+                        "priority": 430,
+                        "protocol": "TCP",
+                        "access": "Allow",
+                        "direction": "Outbound",
+                        "sourceAddressPrefix": "*",
+                        "sourcePortRange": "3389",
+                        "destinationAddressPrefix": "*",
+                        "destinationPortRange": "*"
+                    }
+                }
+            ]
+        },
+        "virtualNetworkName": {
+            "value": "KristianRG-vnet2"
+        },
+        "addressPrefix": {
+            "value": "10.0.0.0/24"
+        },
+        "subnetName": {
+            "value": "default"
+        },
+        "subnetPrefix": {
+            "value": "10.0.0.0/24"
+        },
+        "publicIpAddressName": {
+            "value": "KristianVM2-ip"
+        },
+        "publicIpAddressType": {
+            "value": "Dynamic"
+        },
+        "publicIpAddressSku": {
+            "value": "Basic"
+        },
+        "virtualMachineName": {
+            "value": "KristianVM2"
+        },
+        "virtualMachineRG": {
+            "value": "KristianRG"
+        },
+        "osDiskType": {
+            "value": "Premium_LRS"
+        },
+        "virtualMachineSize": {
+            "value": "Standard_D2s_v3"
+        },
+        "adminUsername": {
+            "value": "kristian"
+        },
+        "adminPassword": {
+            "reference": {
+                "keyVault":  {
+                    "id":  "/subscriptions/ae8ab787-c66f-4733-aed2-228ab3e8523b/resourceGroups/KristianRG/providers/Microsoft.KeyVault/vaults/kristianVault"
+                },
+                "secretName": "kristianVMPassword"
+            }            
+        },
+        "diagnosticsStorageAccountName": {
+            "value": "kristiandiag"
+        },
+        "diagnosticsStorageAccountId": {
+            "value": "Microsoft.Storage/storageAccounts/kristiandiag"
+        },
+        "diagnosticsStorageAccountType": {
+            "value": "Standard_LRS"
+        },
+        "diagnosticsStorageAccountKind": {
+            "value": "Storage"
+        }
+    }
+}
