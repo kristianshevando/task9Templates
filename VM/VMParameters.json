@@ -55,7 +55,7 @@
                 "keyVault":  {
                     "id":  "/subscriptions/ae8ab787-c66f-4733-aed2-228ab3e8523b/resourceGroups/KristianRG/providers/Microsoft.KeyVault/vaults/kristianVault"
                     },
-                    "secretName": "kristianVmPassword"
+                    "secretName": "kristianVMPassword"
             }
         },
         "diagnosticsStorageAccountName": {
