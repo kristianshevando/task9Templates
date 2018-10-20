@@ -34,7 +34,7 @@
         }
     },
     "variables": {
-        "runbookName": "kristianRunbook",
+        "runbookName": "Shutdown-ARM-VMs-Parallel",
         "runbookDescription": "Stopping VMs",
         "sku": "Free"
     },
