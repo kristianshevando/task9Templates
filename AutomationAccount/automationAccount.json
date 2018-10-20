@@ -14,9 +14,6 @@
                 "description": "DefaultAzureCredential is the name of the Automation credential used in this runbook. This credential allows you to authenticate to Azure. "
             }
         },
-        "sastokenUrl": {
-            "type": "securestring"
-        },
         "userName": {
             "type": "string",
             "metadata": {
@@ -70,7 +67,7 @@
               "logVerbose": "false",
               "description": "[variables('runbookDescription')]",
               "publishContentLink": {
-                "uri": "[parameters('sastokenUrl')]",
+                "uri": "https://kristiansaautomation.blob.core.windows.net/kristiancontainer/Workflow_Stop-AzureVM.ps1",
                 "version": "1.0.0.0"
               }
             }
