@@ -25,17 +25,9 @@
             "metadata": {
                 "description": "The password for the Azure Automation credential."
             }
-        },
-        "jobId": {
-            "type": "string",
-            "metadata": {
-                "description": "The GUID for the runbook job to be started."
-            }
         }
     },
     "variables": {
-        "runbookName": "Shutdown-ARM-VMs-Parallel",
-        "runbookDescription": "Stopping VMs",
         "sku": "Free"
     },
     "resources": [
@@ -53,26 +45,6 @@
         },
         "resources": [
           {
-            "name": "[variables('runbookName')]",
-            "type": "runbooks",
-            "apiVersion": "2015-01-01-preview",
-            "location": "[resourceGroup().location]",
-            "dependsOn": [
-              "[concat('Microsoft.Automation/automationAccounts/', parameters('accountName'))]"
-            ],
-            "tags": { },
-            "properties": {
-              "runbookType": "Script",
-              "logProgress": "false",
-              "logVerbose": "false",
-              "description": "[variables('runbookDescription')]",
-              "publishContentLink": {
-                "uri": "https://kristiansaautomation.blob.core.windows.net/kristiancontainer/Workflow_Stop-AzureVM.ps1",
-                "version": "1.0.0.0"
-              }
-            }
-          },
-          {
             "name": "[parameters('credentialName')]",
             "type": "credentials",
             "apiVersion": "2015-01-01-preview",
@@ -84,24 +56,6 @@
             "properties": {
               "userName": "[parameters('userName')]",
               "password": "[parameters('password')]"
-            }
-          },
-          {
-            "name": "[parameters('jobId')]",
-            "type": "jobs",
-            "apiVersion": "2015-01-01-preview",
-            "location": "[resourceGroup().location]",
-            "dependsOn": [
-              "[concat('Microsoft.Automation/automationAccounts/', parameters('accountName'))]",
-              "[concat('Microsoft.Automation/automationAccounts/', parameters('accountName'), '/runbooks/',variables('runbookName'))]"
-            ],
-            "tags": {
-              "key": "value"
-            },
-            "properties": {
-              "runbook": {
-                "name": "[variables('runbookName')]"
-              }
             }
           }
         ]
